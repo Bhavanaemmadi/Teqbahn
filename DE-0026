@@ -1,0 +1,5 @@
+select Appointmentdate, Patientid, Appointmentid, Locationid, Providerid from (select Appointmentdate, Patientid, Appointmentid, Locationid, Providerid from appointment EXCEPT select Appointmentdate, Patientid, Appointmentid, Locationid, Providerid from appointment1) 
+
+UNION 
+
+select Appointmentdate, Patientid, Appointmentid, Locationid, Providerid from (select Appointmentdate, Patientid, Appointmentid, Locationid, Providerid from appointment1 EXCEPT select Appointmentdate, Patientid, Appointmentid, Locationid, Providerid from appointment);
